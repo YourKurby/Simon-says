@@ -66,7 +66,7 @@ void loop()
       for(anzahlB > 0; anzahlB--;)
       {
 
-        if(hit = true)
+        if(hit = false)
         {
           break;
         }else
