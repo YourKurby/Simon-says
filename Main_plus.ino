@@ -26,10 +26,11 @@ bool lvl_select = false;
 
 long randNumber; // random zahl für LED die leuchtet
 
-int lvl = 0; // Zählt die geschaften Level
+int lvl; // Zählt die geschaften Level
 int anzahl_LED; // anzahl der LED die in einem Durchlauf leuchten
 int anzahl_Taster; // anzahl der Taster die gedrückt werden müssen
-int LED_speed = 700; // Wie lange die LEDs leuchten
+int LED_speed; // Wie lange die LEDs leuchten
+int delay_LEDs; // das delay zwischen den LEDs
 
 Keypad Tastenfeld = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
 Adafruit_NeoPixel pixels(NUMPIXEL, PIN, NEO_GRB + NEO_KHZ800);
@@ -64,6 +65,7 @@ void loop()
   lvl_select = false;
   Spiel = true;
   LED_speed = 700;
+  delay_LEDs = 200;
 
   while(lvl_select == false)
   {  
@@ -84,54 +86,67 @@ void loop()
           case '*':
               lvl = 3;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case '7':
               lvl = 4;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case '8':
               lvl = 5;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case '9':
               lvl = 6;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case 'C':
               lvl = 7;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case 'B':
               lvl = 8;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case '6':
               lvl = 9;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case '5':
               lvl = 10;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case '4':
               lvl = 11;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case '1':
               lvl = 12;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case '2':
               lvl = 13;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case '3':
               lvl = 14;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           case 'A':
               lvl = 15;
               LED_speed = LED_speed - (30*(lvl-2));
+              delay_LEDs = delay_LEDs - (10*(lvl-2));
             break;
           default:
             break;
@@ -194,6 +209,7 @@ void loop()
     {
       anzahl_LED = 5;
       anzahl_Taster = 5;
+      delay_LEDs = delay_LEDs - 10;
       LED_speed = LED_speed - 30;
     }
   
