@@ -11,6 +11,6 @@ Simon says 4x4 Arduino Project 2BKI2
 
 ## Lybaris
 [Adafruit NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel) <br/>
-[Kaypad](https://playground.arduino.cc/) <br/>
+[Kaypad](https://github.com/Chris--A/Keypad) <br/>
 
 
